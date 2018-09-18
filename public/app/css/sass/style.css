@@ -232,27 +232,23 @@ a.text-white:hover, a.text-white:focus, a.text-white:active {
   top: -3px;
 }
 
-.addthis_toolbox.addthis_vertical_style {
+.addthis_inline_follow_toolbox .addthis_toolbox.addthis_vertical_style {
   width: 200px;
   position: fixed;
   top: 45%;
   z-index: 9999;
   background: #f1b72f;
 }
-
-.at-icon-wrapper {
+.addthis_inline_follow_toolbox .at-icon-wrapper {
   display: block !important;
 }
-
-.addthis_follow_label {
+.addthis_inline_follow_toolbox .addthis_follow_label {
   display: none !important;
 }
-
-.at-follow-tbx-element .at300b, .at-follow-tbx-element .at300m {
+.addthis_inline_follow_toolbox .at-follow-tbx-element .at300b, .addthis_inline_follow_toolbox .at-follow-tbx-element .at300m {
   margin: 5px 0 !important;
 }
-
-.addthis_toolbox.addthis_vertical_style {
+.addthis_inline_follow_toolbox .addthis_toolbox.addthis_vertical_style {
   width: 43px !important;
   padding: 0 5px !important;
 }
