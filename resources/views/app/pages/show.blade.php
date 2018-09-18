@@ -75,6 +75,8 @@
                             <div class="margin-50px-bottom xs-margin-25px-bottom">
                                 <h3 class="text-uppercase text-primary">{{ $page->title }}</h3>
                                 @if($page->subtitle)<h6 class="alt-font text-gray text-medium">{{ $page->subtitle }}</h6>@endif
+                                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                <div class="addthis_inline_share_toolbox margin-25px-bottom"></div>
                                 @if($page->content)<div class="text-large text-medium-gray">{!! $page->content !!}</div>@endif
                             </div>
                             @if($page->videos_app->count() > 0)

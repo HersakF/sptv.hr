@@ -27,6 +27,9 @@
 <script type="text/javascript" src="{{ asset('app/js/instafeed.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('app/js/retina.min.js') }}"></script>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ba0c735e2435027"></script>
+
 {{--<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>--}}
 {{--<script>--}}
     {{--if(Hls.isSupported()) {--}}

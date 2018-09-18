@@ -21,7 +21,6 @@
         <!-- CONTENT -->
         @yield('content')
 
-
         <!-- FOOTER -->
         @include('app.partials.footer')
 
