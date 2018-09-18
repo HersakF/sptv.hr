@@ -1,0 +1,35 @@
+// BASE SETUP
+a
+  color: $primary
+  &:hover,
+  &:active,
+  &:focus
+    color: darken($primary, 10%)
+    text-decoration: none
+    outline: none
+
+body
+  font-family: $primary-font
+
+h1, h2, h3, h4, h5, h6
+  font-family: $primary-font
+  font-weight: $light
+
+p
+  font-size: 18px
+  line-height: 28px
+  color: $grey
+  @media screen and (max-width: $break-xs)
+    font-size: 16px
+    line-height: 26px
+
+
+body::-webkit-scrollbar
+  width: 0.6em
+
+body::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3)
+
+body::-webkit-scrollbar-thumb
+  background-color: $primary
+  outline: 1px solid $primary

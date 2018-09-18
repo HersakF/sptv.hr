@@ -1,0 +1,9 @@
+<script type="text/javascript">
+
+    $(".deleteCarouselsItem").on("click", function() {
+        var id = $(this).attr('id');
+        $("#deleteItemForm").attr('action', '/cms/carousels-fragments/'+id);
+        $('#deleteItemForm').append("<input type='hidden' name='_method' value='DELETE'/>");
+    });
+
+</script>
