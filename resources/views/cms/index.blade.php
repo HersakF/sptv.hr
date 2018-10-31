@@ -253,6 +253,7 @@
     <script type="text/javascript" src="{{ asset('cms/joli/js/plugins/noty/themes/default.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('cms/joli/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('cms/joli/js/plugins/moment.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('cms/joli/js/plugins.js') }}"></script>
     <script type="text/javascript" src="{{ asset('cms/joli/js/actions.js') }}"></script>

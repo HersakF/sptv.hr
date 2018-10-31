@@ -46,9 +46,9 @@
                                 @if($page->subtitle)<h6 class="alt-font text-gray text-medium">{{ $page->subtitle }}</h6>@endif
                                 @if($page->content)<div class="text-large text-medium-gray">{!! $page->content !!}</div>@endif
                             </div>
-                            <div class="margin-50px-bottom xs-margin-25px-bottom visible-xs visible-sm">
-                                {{--<video id="video"></video>--}}
-                                <video width="auto" height="500" id="video" controls="controls" src="http://wowza.h1telekom.hr:1935/sporttv/smil:sptv.smil/playlist.m3u8"></video>
+                            <div class="margin-50px-bottom xs-margin-25px-bottom">
+                                {{--<video id="video" controls height="500"></video>--}}
+                                <video width="auto" height="500" id="video" controls="controls" src="https://wowza.h1telekom.hr:1937/sporttv/smil:sptv.smil/playlist.m3u8"></video>
                             </div>
                             @if($page->videos_app->count() > 0)
                                 @foreach($page->videos_app as $video)

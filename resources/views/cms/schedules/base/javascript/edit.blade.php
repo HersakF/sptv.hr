@@ -26,9 +26,9 @@
                         $select.append('<option value="">Nothing selected</option>');
                     }
                     if(linkedPageURL === value.url) {
-                        $select.append('<option value=' + value.url + ' selected>' + value.title + '</option>');
+                        $select.append('<option value=' + value.url + ' selected>' + value.title + ' <strong>(' + moment(value.created_at).format('DD.MM.YYYY.') + ')</strong></option>');
                     } else {
-                        $select.append('<option value=' + value.url + '>' + value.title + '</option>');
+                        $select.append('<option value=' + value.url + '>' + value.title + ' <strongs>(' + moment(value.created_at).format('DD.MM.YYYY.') + ')</strongs></option>');
                     }
                 });
 

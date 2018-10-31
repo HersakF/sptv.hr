@@ -280,59 +280,61 @@
             @if($feedHrvatskaRepka)
                 @php $countFeed = 1 @endphp
                 @php $healthyFeed = false @endphp
-                @foreach($feedHrvatskaRepka["channel"]["item"] as $feed)
-                    @php
-                        try {
-                            $feedLink   = $feed["link"];
-                            $feedTitle  = $feed["title"];
-                        } catch (Exception $exception) {
-                            $feedLink   = null;
-                            $feedTitle  = null;
-                        }
-                    @endphp
-                    @if($feedLink && $feedTitle)
-                        @php $healthyFeed = true; @endphp
-                    @endif
-                @endforeach
-                @if($healthyFeed == true)
-                    <section class="bg-light-gray section-news-feed">
-                        <div class="container">
-                            <div class="row padding-40px-bottom">
-                                <div class="col-sm-3 col-xs-8 xs-center-col">
-                                    <img src="{{ asset('app/images/static/hrvatskareprezentacija.png') }}" alt="Hrvatska reprezentacija">
+                @if(isset($feedHrvatskaRepka["channel"]["item"]))
+                    @foreach($feedHrvatskaRepka["channel"]["item"] as $feed)
+                        @php
+                            try {
+                                $feedLink   = $feed["link"];
+                                $feedTitle  = $feed["title"];
+                            } catch (Exception $exception) {
+                                $feedLink   = null;
+                                $feedTitle  = null;
+                            }
+                        @endphp
+                        @if($feedLink && $feedTitle)
+                            @php $healthyFeed = true; @endphp
+                        @endif
+                    @endforeach
+                    @if($healthyFeed == true)
+                        <section class="bg-light-gray section-news-feed">
+                            <div class="container">
+                                <div class="row padding-40px-bottom">
+                                    <div class="col-sm-3 col-xs-8 xs-center-col">
+                                        <img src="{{ asset('app/images/static/hrvatskareprezentacija.png') }}" alt="Hrvatska reprezentacija">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="swiper-multy-row-container-news swiper-container">
-                                    <div class="swiper-wrapper">
-                                        @foreach($feedHrvatskaRepka["channel"]["item"] as $feed)
-                                            @php
-                                                try {
-                                                    $feedLink   = $feed["link"];
-                                                    $feedTitle  = $feed["title"];
-                                                } catch (Exception $exception) {
-                                                    $feedLink   = null;
-                                                    $feedTitle  = null;
-                                                }
-                                            @endphp
-                                            @if($feedLink && $feedTitle)
-                                                <div class="grid-item swiper-slide col-md-4 col-sm-4 col-xs-12 feed-block">
-                                                    <div class="blog-post bg-white inner-match-height">
-                                                        <div class="post-details padding-40px-all sm-padding-20px-all text-center">
-                                                            <a href="{{ $feedLink }}" target="_blank" class="feed-title text-primary display-block">{!! str_limit(strip_tags($feedTitle), $limit = 100, $end = '...') !!}</a>
-                                                            <a href="{{ $feedLink }}" target="_blank" class="btn btn-primary btn-rounded btn-small">Saznajte više</a>
+                                <div class="row">
+                                    <div class="swiper-multy-row-container-news swiper-container">
+                                        <div class="swiper-wrapper">
+                                            @foreach($feedHrvatskaRepka["channel"]["item"] as $feed)
+                                                @php
+                                                    try {
+                                                        $feedLink   = $feed["link"];
+                                                        $feedTitle  = $feed["title"];
+                                                    } catch (Exception $exception) {
+                                                        $feedLink   = null;
+                                                        $feedTitle  = null;
+                                                    }
+                                                @endphp
+                                                @if($feedLink && $feedTitle)
+                                                    <div class="grid-item swiper-slide col-md-4 col-sm-4 col-xs-12 feed-block">
+                                                        <div class="blog-post bg-white inner-match-height">
+                                                            <div class="post-details padding-40px-all sm-padding-20px-all text-center">
+                                                                <a href="{{ $feedLink }}" target="_blank" class="feed-title text-primary display-block">{!! str_limit(strip_tags($feedTitle), $limit = 100, $end = '...') !!}</a>
+                                                                <a href="{{ $feedLink }}" target="_blank" class="btn btn-primary btn-rounded btn-small">Saznajte više</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @endif
-                                            @if($countFeed == 9) @break @endif
-                                            @php $countFeed++ @endphp
-                                        @endforeach
+                                                @endif
+                                                @if($countFeed == 9) @break @endif
+                                                @php $countFeed++ @endphp
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    @endif
                 @endif
             @endif
 
@@ -358,59 +360,62 @@
             @if($feedSportskaHrvatska)
                 @php $countFeed = 1 @endphp
                 @php $healthyFeed = false @endphp
-                @foreach($feedSportskaHrvatska["channel"]["item"] as $feed)
-                    @php
-                        try {
-                            $feedLink   = $feed["link"];
-                            $feedTitle  = $feed["title"];
-                        } catch (Exception $exception) {
-                            $feedLink   = null;
-                            $feedTitle  = null;
-                        }
-                    @endphp
-                    @if($feedLink && $feedTitle)
-                        @php $healthyFeed = true; @endphp
-                    @endif
-                @endforeach
-                @if($healthyFeed == true)
-                    <section class="bg-light-gray section-news-feed">
-                        <div class="container">
-                            <div class="row padding-40px-bottom">
-                                <div class="col-sm-3 col-xs-8 xs-center-col">
-                                    <img src="{{ asset('app/images/static/sportskahrvatska.png') }}" alt="Sportska Hrvatska">
+
+                @if(isset($feedSportskaHrvatska["channel"]["item"]))
+                    @foreach($feedSportskaHrvatska["channel"]["item"] as $feed)
+                        @php
+                            try {
+                                $feedLink   = $feed["link"];
+                                $feedTitle  = $feed["title"];
+                            } catch (Exception $exception) {
+                                $feedLink   = null;
+                                $feedTitle  = null;
+                            }
+                        @endphp
+                        @if($feedLink && $feedTitle)
+                            @php $healthyFeed = true; @endphp
+                        @endif
+                    @endforeach
+                    @if($healthyFeed == true)
+                        <section class="bg-light-gray section-news-feed">
+                            <div class="container">
+                                <div class="row padding-40px-bottom">
+                                    <div class="col-sm-3 col-xs-8 xs-center-col">
+                                        <img src="{{ asset('app/images/static/sportskahrvatska.png') }}" alt="Sportska Hrvatska">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="swiper-blog swiper-container">
-                                    <div class="swiper-wrapper">
-                                        @foreach($feedSportskaHrvatska["channel"]["item"] as $feed)
-                                            @php
-                                                try {
-                                                    $feedLink   = $feed["link"];
-                                                    $feedTitle  = $feed["title"];
-                                                } catch (Exception $exception) {
-                                                    $feedLink   = null;
-                                                    $feedTitle  = null;
-                                                }
-                                            @endphp
-                                            @if($feedLink && $feedTitle)
-                                                <div class="grid-item swiper-slide col-md-4 col-sm-4 col-xs-12 feed-block">
-                                                    <div class="blog-post bg-white inner-match-height">
-                                                        <div class="post-details padding-40px-all sm-padding-20px-all text-center">
-                                                            <a href="{{ $feedLink }}" target="_blank" class="feed-title text-primary display-block">{!! str_limit(strip_tags($feedTitle), $limit = 100, $end = '...') !!}</a>
-                                                            <a href="{{ $feedLink }}" target="_blank" class="btn btn-primary btn-rounded btn-small">Saznajte više</a>
+                                <div class="row">
+                                    <div class="swiper-blog swiper-container">
+                                        <div class="swiper-wrapper">
+                                            @foreach($feedSportskaHrvatska["channel"]["item"] as $feed)
+                                                @php
+                                                    try {
+                                                        $feedLink   = $feed["link"];
+                                                        $feedTitle  = $feed["title"];
+                                                    } catch (Exception $exception) {
+                                                        $feedLink   = null;
+                                                        $feedTitle  = null;
+                                                    }
+                                                @endphp
+                                                @if($feedLink && $feedTitle)
+                                                    <div class="grid-item swiper-slide col-md-4 col-sm-4 col-xs-12 feed-block">
+                                                        <div class="blog-post bg-white inner-match-height">
+                                                            <div class="post-details padding-40px-all sm-padding-20px-all text-center">
+                                                                <a href="{{ $feedLink }}" target="_blank" class="feed-title text-primary display-block">{!! str_limit(strip_tags($feedTitle), $limit = 100, $end = '...') !!}</a>
+                                                                <a href="{{ $feedLink }}" target="_blank" class="btn btn-primary btn-rounded btn-small">Saznajte više</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 @endif
-                                            @if($countFeed == 9) @break @endif
-                                            @php $countFeed++ @endphp
-                                        @endforeach
+                                                @if($countFeed == 9) @break @endif
+                                                @php $countFeed++ @endphp
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    @endif
                 @endif
             @endif
 

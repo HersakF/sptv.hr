@@ -394,6 +394,7 @@ $(document).ready(function () {
     /* ===================================
     swiper slider
     ====================================== */
+
     var swiperFull = new Swiper('.swiper-full-screen', {
         pagination: '.swiper-pagination',
         paginationClickable: true,

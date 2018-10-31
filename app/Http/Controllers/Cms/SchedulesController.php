@@ -85,7 +85,7 @@ class SchedulesController extends Controller
     public function getItemInfo(Request $request)
     {
         $item           = Schedules::findOrFail($request->id);
-        $linkedPages    = Pages::where('category', '=', 'highlights')->where('page_id', '!=', null)->orderBy('id', 'desc')->limit(25)->get();
+        $linkedPages    = Pages::where('category', '=', 'highlights')->where('page_id', '!=', null)->orderBy('id', 'desc')->limit(200)->get();
         $source      = array([
             $item,
             $linkedPages
