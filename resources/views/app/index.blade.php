@@ -12,6 +12,7 @@
 
         <!-- STYLE -->
         @include('app.partials.styles')
+        <link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">
     </head>
     <body>
         <!-- LOADER -->

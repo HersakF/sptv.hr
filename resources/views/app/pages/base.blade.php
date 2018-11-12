@@ -420,85 +420,85 @@
             @endif
 
             <!-- BLOG -->
-            @if($news->count() > 0  && $newsArticles->count() > 0)
-                <section class="bg-primary section-news-home">
-                    <div class="container">
+            {{--@if($news->count() > 0  && $newsArticles->count() > 0)--}}
+                {{--<section class="bg-primary section-news-home">--}}
+                    {{--<div class="container">--}}
 
-                        @foreach($news as $item)
-                            <div class="row padding-20px-bottom">
-                                <div class="col-md-12 no-padding xs-padding-15px-lr text-center">
-                                    <h3 class="text-uppercase text-white">{{ $item->title }}</h3>
-                                    @if($item->subtitle)<h6 class="alt-font text-white text-medium">{{ $item->subtitle }}</h6>@endif
-                                </div>
-                            </div>
-                        @endforeach
+                        {{--@foreach($news as $item)--}}
+                            {{--<div class="row padding-20px-bottom">--}}
+                                {{--<div class="col-md-12 no-padding xs-padding-15px-lr text-center">--}}
+                                    {{--<h3 class="text-uppercase text-white">{{ $item->title }}</h3>--}}
+                                    {{--@if($item->subtitle)<h6 class="alt-font text-white text-medium">{{ $item->subtitle }}</h6>@endif--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
 
-                        @if($newsArticles->count() > 0)
-                            <div class="row equalize">
-                                @foreach($newsArticles as $key => $article)
-                                    {{ $fragmentVideoURL = null }}
-                                    <div class="grid-item col-sm-6 col-md-4 @if($loop->last) no-margin @else sm-margin-35px-bottom @endif @if($key == 2) hidden-sm @endif">
-                                        <div class="blog-post">
-                                            <div class="blog-post-images overflow-hidden image-hover-style-1">
-                                                <a href="{{ url($article->getAbsolutePath()) }}">
-                                                    @if($article->carousels_app->count() > 0)
-                                                        @foreach($article->carousels_app as $carousel)
-                                                            @if($carousel->carousels_fragments_app->count() > 0)
-                                                                @foreach($carousel->carousels_fragments_app as $fragment)
-                                                                    <img src="{{ asset($fragment->photos->path) }}" alt="{{ $fragment->photos->alt }}" data-no-retina="">
-                                                                    {{ $fragmentVideoURL = $fragment->url }}
-                                                                    @break
-                                                                @endforeach
-                                                            @else
-                                                                <img src="{{ asset('app/images/static/no-img-category.jpg') }}" alt="" data-no-retina="">
-                                                                {{ $fragmentVideoURL = $fragment->url }}
-                                                            @endif
-                                                        @endforeach
-                                                    @else
-                                                        <img src="{{ asset('app/images/static/no-img-category.jpg') }}" alt="" data-no-retina="">
-                                                    @endif
-                                                </a>
-                                            </div>
-                                            <div class="post-details bg-white padding-40px-all">
-                                                <span class="news-date text-grey">{{ Carbon\Carbon::parse($article->created_at)->format("d/m/y") }}
-                                                    @if($fragmentVideoURL)
-                                                        @php
-                                                            $isVideo = false;
-                                                            try {
-                                                                $videoPartials = parse_url($fragment->url);
-                                                                if((preg_match('/youtube/', $videoPartials['host']) == true) || (preg_match('/vimeo/', $videoPartials['host']) == true)){ $isVideo = true; }
-                                                            } catch (Exception $exception) {
-                                                                $isVideo = false;
-                                                            }
-                                                        @endphp
-                                                        @if($isVideo == true)
-                                                            <a href="{{ $fragment->url }}" class="popup-vimeo pull-right"><i class="fa fa-play-circle-o icon-small"></i></a>
-                                                        @endif
-                                                    @endif
-                                                </span>
-                                                <a href="{{ url($article->getAbsolutePath()) }}" class="news-title text-primary display-block margin-15px-bottom text-ellipsis">{{ $article->title }}</a>
-                                                @if($article->abstract)
-                                                    <p class="margin-15px-bottom height-85px overflow-hidden">{!! str_limit(strip_tags($article->abstract), $limit = 100, $end = '...') !!}</p>
-                                                @endif
-                                                <a href="{{ url($article->getAbsolutePath()) }}" class="news-link text-grey text-small alt-font display-block">Saznajte više</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{ $fragmentVideoURL = null }}
-                                @endforeach
-                            </div>
-                        @endif
+                        {{--@if($newsArticles->count() > 0)--}}
+                            {{--<div class="row equalize">--}}
+                                {{--@foreach($newsArticles as $key => $article)--}}
+                                    {{--{{ $fragmentVideoURL = null }}--}}
+                                    {{--<div class="grid-item col-sm-6 col-md-4 @if($loop->last) no-margin @else sm-margin-35px-bottom @endif @if($key == 2) hidden-sm @endif">--}}
+                                        {{--<div class="blog-post">--}}
+                                            {{--<div class="blog-post-images overflow-hidden image-hover-style-1">--}}
+                                                {{--<a href="{{ url($article->getAbsolutePath()) }}">--}}
+                                                    {{--@if($article->carousels_app->count() > 0)--}}
+                                                        {{--@foreach($article->carousels_app as $carousel)--}}
+                                                            {{--@if($carousel->carousels_fragments_app->count() > 0)--}}
+                                                                {{--@foreach($carousel->carousels_fragments_app as $fragment)--}}
+                                                                    {{--<img src="{{ asset($fragment->photos->path) }}" alt="{{ $fragment->photos->alt }}" data-no-retina="">--}}
+                                                                    {{--{{ $fragmentVideoURL = $fragment->url }}--}}
+                                                                    {{--@break--}}
+                                                                {{--@endforeach--}}
+                                                            {{--@else--}}
+                                                                {{--<img src="{{ asset('app/images/static/no-img-category.jpg') }}" alt="" data-no-retina="">--}}
+                                                                {{--{{ $fragmentVideoURL = $fragment->url }}--}}
+                                                            {{--@endif--}}
+                                                        {{--@endforeach--}}
+                                                    {{--@else--}}
+                                                        {{--<img src="{{ asset('app/images/static/no-img-category.jpg') }}" alt="" data-no-retina="">--}}
+                                                    {{--@endif--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="post-details bg-white padding-40px-all">--}}
+                                                {{--<span class="news-date text-grey">{{ Carbon\Carbon::parse($article->created_at)->format("d/m/y") }}--}}
+                                                    {{--@if($fragmentVideoURL)--}}
+                                                        {{--@php--}}
+                                                            {{--$isVideo = false;--}}
+                                                            {{--try {--}}
+                                                                {{--$videoPartials = parse_url($fragment->url);--}}
+                                                                {{--if((preg_match('/youtube/', $videoPartials['host']) == true) || (preg_match('/vimeo/', $videoPartials['host']) == true)){ $isVideo = true; }--}}
+                                                            {{--} catch (Exception $exception) {--}}
+                                                                {{--$isVideo = false;--}}
+                                                            {{--}--}}
+                                                        {{--@endphp--}}
+                                                        {{--@if($isVideo == true)--}}
+                                                            {{--<a href="{{ $fragment->url }}" class="popup-vimeo pull-right"><i class="fa fa-play-circle-o icon-small"></i></a>--}}
+                                                        {{--@endif--}}
+                                                    {{--@endif--}}
+                                                {{--</span>--}}
+                                                {{--<a href="{{ url($article->getAbsolutePath()) }}" class="news-title text-primary display-block margin-15px-bottom text-ellipsis">{{ $article->title }}</a>--}}
+                                                {{--@if($article->abstract)--}}
+                                                    {{--<p class="margin-15px-bottom height-85px overflow-hidden">{!! str_limit(strip_tags($article->abstract), $limit = 100, $end = '...') !!}</p>--}}
+                                                {{--@endif--}}
+                                                {{--<a href="{{ url($article->getAbsolutePath()) }}" class="news-link text-grey text-small alt-font display-block">Saznajte više</a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--{{ $fragmentVideoURL = null }}--}}
+                                {{--@endforeach--}}
+                            {{--</div>--}}
+                        {{--@endif--}}
 
-                        @foreach($news as $item)
-                            <div class="row margin-40px-top">
-                                <div class="col-md-12 no-padding xs-padding-15px-lr text-center">
-                                    <a href="{{ $item->url }}" class="btn btn-white btn-rounded btn-large xs-margin-two-all">Saznajte više</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </section>
-            @endif
+                        {{--@foreach($news as $item)--}}
+                            {{--<div class="row margin-40px-top">--}}
+                                {{--<div class="col-md-12 no-padding xs-padding-15px-lr text-center">--}}
+                                    {{--<a href="{{ $item->url }}" class="btn btn-white btn-rounded btn-large xs-margin-two-all">Saznajte više</a>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
+                {{--</section>--}}
+            {{--@endif--}}
 
             <!-- MARKETING -->
             @if($marketings->count() > 1)
@@ -522,7 +522,7 @@
 
             <!-- PARTNERS -->
             @if($partners->count() > 0)
-                <section class="bg-light-gray section-partners">
+                <section class="bg-white section-partners border-bottom border-color-medium-gray">
                     <div class="container">
                         <div class="row">
                             <div class="swiper-slider-clients swiper-container">
