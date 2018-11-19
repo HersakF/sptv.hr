@@ -247,7 +247,7 @@
             <section class="bg-white section-news-other-home">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-8 padding-20px-lr xs-padding-15px-lr">
+                        <div class="col-sm-8 col-sm-offset-2 padding-20px-lr xs-padding-15px-lr">
                             @if($page->videos_app->count() > 0)
                                 <div class="swiper-full-screen swiper-container">
                                     <div class="swiper-wrapper">
@@ -266,11 +266,6 @@
                                     @endif
                                 </div>
                             @endif
-                        </div>
-                        <div class="col-sm-4 padding-20px-lr xs-padding-15px-lr">
-                            <div class="livescore xs-padding-30px-top xs-text-center text-right">
-                                <iframe scrolling="yes" class="" frameborder="0" style="width: auto; overflow-y: auto; overflow-x: hidden; background-color: #ffffff; height: 380px;" src="https://www.sportinfocentar.com/livescore/brzi8.html" id="livescore_iframe">Vaš pretraživač ne podržava iframe.</iframe>
-                            </div>
                         </div>
                     </div>
                 </div>
