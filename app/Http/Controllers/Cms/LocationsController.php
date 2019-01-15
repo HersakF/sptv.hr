@@ -26,7 +26,7 @@ class LocationsController extends Controller
     {
         try{
             $address = str_replace(" ", "+", $request->address);
-            $url = "http://maps.google.com/maps/api/geocode/json?address=$address&sensor=false&region=India";
+            $url = "https://maps.google.com/maps/api/geocode/json?address=$address&key=AIzaSyADe9CNKfMsrGO7TMXiHahfLab94AxxV0A";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -71,7 +71,7 @@ class LocationsController extends Controller
 
         try{
             $address = str_replace(" ", "+", $request->address);
-            $url = "http://maps.google.com/maps/api/geocode/json?address=$address&sensor=false&region=India";
+            $url = "https://maps.google.com/maps/api/geocode/json?address=$address&key=AIzaSyADe9CNKfMsrGO7TMXiHahfLab94AxxV0A";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

@@ -4,12 +4,12 @@
     <div class="form-group">
         <div class="col-md-12">
             <label>Title</label>
-            <input type="text" name="title" class="form-control" placeholder="Title" maxlength="255" value="{{ $page->title }}" oninvalid="this.setCustomValidity('Please fill in the field.')" oninput="setCustomValidity('')" required/>
+            <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $page->title }}" oninvalid="this.setCustomValidity('Please fill in the field.')" oninput="setCustomValidity('')" required/>
         </div>
         @if($page->category != 'base')
             <div class="col-md-12">
                 <label>Subtitle</label>
-                <input type="text" name="subtitle" class="form-control" placeholder="Subtitle" maxlength="255" value="{{ $page->subtitle }}"/>
+                <input type="text" name="subtitle" class="form-control" placeholder="Subtitle" value="{{ $page->subtitle }}"/>
             </div>
             @if($page->category == 'highlights')
                 <input type="hidden" class="released-at-form" name="released_at" value="{{ Carbon\Carbon::parse($page->released_at)->format("Y-m-d") }} {{ Carbon\Carbon::parse($page->released_at)->format("H:i") }}" />

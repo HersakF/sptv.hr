@@ -14,11 +14,11 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <label>Title</label>
-                            <input type="text" name="title" maxlength="255" class="form-control" placeholder="Title" oninvalid="this.setCustomValidity('Please fill in the field.')" oninput="setCustomValidity('')" required/>
+                            <input type="text" name="title" class="form-control" placeholder="Title" oninvalid="this.setCustomValidity('Please fill in the field.')" oninput="setCustomValidity('')" required/>
                         </div>
                         <div class="col-md-12">
                             <label>Subtitle</label>
-                            <input type="text" name="subtitle" maxlength="255" class="form-control" placeholder="Subtitle"/>
+                            <input type="text" name="subtitle" class="form-control" placeholder="Subtitle"/>
                         </div>
                         <div class="col-md-12">
                             <label>Slug</label>
